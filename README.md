@@ -1,2 +1,49 @@
-# crm-workflow-automation
-Seguimiento de oportunidades: del primer contacto a la entrega al especialista. Demo clara con datos ficticios.
+# Seguimiento de oportunidades
+
+**Que una oportunidad no se pierda entre el primer contacto y la entrega.**
+
+Organiza contactos, evita duplicados y verifica que cada paso tenga lo necesario para avanzar.
+
+👉 [Probar el proyecto](https://krissortegal83.github.io/crm-workflow-automation/) · [Ver todos los proyectos](https://krissortegal83.github.io/) · [Hablar conmigo](https://www.linkedin.com/in/christian-ortega-lugo-7523a518b/)
+
+## Pruébalo en unos minutos
+
+Captura el contacto de ejemplo, completa el diagnóstico, acuerda el alcance y prepara la entrega al especialista.
+
+## Qué puedes ver
+
+Una demostración con datos ficticios. Puedes cambiar el escenario, comprobar sus reglas y ver qué sucede cuando algo no coincide. Los casos nuevos permiten descargar el historial y un resumen.
+
+## Mi enfoque
+
+Entender el proceso, definir reglas claras, hacer visibles los errores y comprobar el resultado antes de entregar. Este proyecto es independiente y se creó con ayuda de IA. No representa un trabajo realizado para antiguos empleadores ni resultados de clientes.
+
+## Para revisar el código
+
+El proyecto usa HTML, CSS y JavaScript. Las reglas se mantienen separadas de la pantalla para poder probarlas. El catálogo conserva el origen y el historial compartido: [Enterprise Solutions Lab](https://github.com/krissortegal83/enterprise-solutions-lab).
+
+Los datos son ficticios. Las conexiones hospitalarias, comerciales y ERP son simuladas dentro del alcance indicado. Una operación real necesita integraciones, permisos, almacenamiento y aceptación propios.
+
+## ¿Te sirve para un problema parecido?
+
+Cuéntame qué proceso quieres mejorar, qué herramientas usas y cómo sabrías que el resultado funciona. [Platiquemos en LinkedIn](https://www.linkedin.com/in/christian-ortega-lugo-7523a518b/).
+
+## Ejecutarlo en tu equipo
+
+Necesitas Python 3 para abrir la demo y Node.js 22 o posterior para comprobar sus reglas. No hace falta instalar paquetes.
+
+```bash
+python -m http.server 8000
+# Abre http://localhost:8000
+npm test
+```
+
+## Organización
+
+- `index.html`: la demostración.
+- `assets/`: presentación y reglas de negocio.
+- `tests/`: pruebas de los casos y sus errores.
+- `docs/ORIGEN.md`: procedencia, alcance y mantenimiento.
+- `.github/workflows/`: comprobaciones automáticas y publicación.
+
+Este repositorio puede ejecutarse y publicarse sin depender de otros repositorios. La base compartida se distribuye como una copia versionada sin servicios externos; consulta su origen antes de actualizarla.
