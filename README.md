@@ -1,49 +1,68 @@
-# Seguimiento de oportunidades
+# Commercial Workflow Lab
 
-**Que una oportunidad no se pierda entre el primer contacto y la entrega.**
+Turn a synthetic inquiry into a qualified opportunity, an accepted scope and a specialist handover with an explicit stage contract.
 
-Organiza contactos, evita duplicados y verifica que cada paso tenga lo necesario para avanzar.
+**Español:** Automatización comercial: captura, calificación, propuesta y entrega a especialistas con trazabilidad.
 
-👉 [Probar el proyecto](https://krissortegal83.github.io/crm-workflow-automation/) · [Ver todos los proyectos](https://krissortegal83.github.io/) · [Hablar conmigo](https://www.linkedin.com/in/christian-ortega-lugo-7523a518b/)
+[Live demonstration](https://krissortegal83.github.io/crm-workflow-automation/) · [All projects](https://krissortegal83.github.io/)
 
-## Pruébalo en unos minutos
+## Business case
 
-Captura el contacto de ejemplo, completa el diagnóstico, acuerda el alcance y prepara la entrega al especialista.
+Leads lose momentum when intake, qualification and delivery handover are disconnected. A pipeline stage needs supporting evidence.
 
-## Qué puedes ver
+## Design decision
 
-Una demostración con datos ficticios. Puedes cambiar el escenario, comprobar sus reglas y ver qué sucede cuando algo no coincide. Los casos nuevos permiten descargar el historial y un resumen.
+Deduplicate by normalized email, route by required service and require discovery, scope and acceptance before advancing.
 
-## Mi enfoque
+## Guided demonstration
 
-Entender el proceso, definir reglas claras, hacer visibles los errores y comprobar el resultado antes de entregar. Este proyecto es independiente y se creó con ayuda de IA. No representa un trabajo realizado para antiguos empleadores ni resultados de clientes.
+1. Capture the sample lead twice; the pipeline should contain one opportunity.
+2. Try advancing before confirming discovery. Then confirm discovery and advance.
+3. Confirm scope, advance to proposal, record acceptance and complete the handover.
 
-## Para revisar el código
+## Acceptance criteria
 
-El proyecto usa HTML, CSS y JavaScript. Las reglas se mantienen separadas de la pantalla para poder probarlas. El catálogo conserva el origen y el historial compartido: [Enterprise Solutions Lab](https://github.com/krissortegal83/enterprise-solutions-lab).
+- Duplicate email does not inflate the pipeline.
+- Evidence gates block unsupported stage changes.
+- The final handover preserves the service specialty and decision trail.
 
-Los datos son ficticios. Las conexiones hospitalarias, comerciales y ERP son simuladas dentro del alcance indicado. Una operación real necesita integraciones, permisos, almacenamiento y aceptación propios.
+## Implementation
 
-## ¿Te sirve para un problema parecido?
+`index.html` → shared `assets/lab-ui.mjs` → pure functions in `assets/business-rules.mjs` → in-memory state and downloadable JSON/Markdown. Business rules are tested with Node’s built-in test runner. No installation, vendor account, backend or paid service is required for the deployed demo.
 
-Cuéntame qué proceso quieres mejorar, qué herramientas usas y cómo sabrías que el resultado funciona. [Platiquemos en LinkedIn](https://www.linkedin.com/in/christian-ortega-lugo-7523a518b/).
+## Scope and production considerations
 
-## Ejecutarlo en tu equipo
+Local browser state and simulated specialty routing. No live CRM connection, email delivery, real partner referral, revenue prediction or signed contract.
 
-Necesitas Python 3 para abrir la demo y Node.js 22 o posterior para comprobar sus reglas. No hace falta instalar paquetes.
+A production pilot requires authenticated users, appropriate permissions, durable storage, integration contract testing, monitoring, data governance, operational ownership and acceptance. Metrics are scenario outputs, not historical client results.
+
+## Validation
+
+Run `npm test` from the repository root. Run `python -m http.server 8000`, then open this folder in the browser to test the scenario and exports. See [catalog quality evidence](https://github.com/krissortegal83/enterprise-solutions-lab/blob/main/docs/QUALITY.md).
+
+## Authorship and provenance
+
+Independent project created for Christian Ortega Lugo’s portfolio using AI-assisted implementation. Fictional organizations and records only. It is not an employer deliverable, endorsement, vendor certification or claim of deployed client outcomes. The professional owner should review and be prepared to explain the design and limitations.
+
+## Run independently
+
+Use Python 3 to serve the demo and Node.js 22+ to run its tests. No package installation is required.
 
 ```bash
 python -m http.server 8000
-# Abre http://localhost:8000
+# Open http://localhost:8000
+npm run check
 npm test
 ```
 
-## Organización
+## Repository layout
 
-- `index.html`: la demostración.
-- `assets/`: presentación y reglas de negocio.
-- `tests/`: pruebas de los casos y sus errores.
-- `docs/ORIGEN.md`: procedencia, alcance y mantenimiento.
-- `.github/workflows/`: comprobaciones automáticas y publicación.
+- `index.html`: interactive demo.
+- `assets/`: presentation and business rules.
+- `tests/`: scenarios and failure cases.
+- `docs/ORIGEN.md`: provenance and maintenance.
+- `.github/workflows/`: automated checks and deployment.
 
-Este repositorio puede ejecutarse y publicarse sin depender de otros repositorios. La base compartida se distribuye como una copia versionada sin servicios externos; consulta su origen antes de actualizarla.
+## En español
+
+Seguimiento comercial: organiza contactos, acuerdos y entrega a especialistas. Puedes probar la demo sin registro. Los controles y la documentación técnica están en inglés para facilitar la colaboración internacional.
